@@ -1,13 +1,9 @@
 #Crea un programa que solicite al usuario un numero entero positivo y luego imprima los numeros desde ese 
 #numero hasta 1 utilizando un buclewhile.
 
-num_Usuario = int(input("Ingrese numero: "))
-
-num1=0
-
-for i in range(int(num1,num_Usuario)):
-    while True
-   
-        
+num1=int(input("ingrese un numero: "))
 
 
+while num1>=1:
+    print(num1)
+    num1=num1-1

@@ -2,11 +2,13 @@
 # no. Si la calificacion es igual o mayor a 60, muestra el mensaje "Has aprobado". De lo contrario, muestra el mensaje 
 #"Has reprobado".
 
+calificacion=float(input("ingrese su nota de examen: "))
 
-def notas(calificacion):
-    if (calificacion>=60):
-        print("has aprobado, felicitaciones")
-        else:
-            print("te va a filtar Johlver ")
 
-calificacion=float(input("ingrese la nota de su calificacion: "))
+aprovado=calificacion>=60
+reprovado=calificacion<60
+    
+if (calificacion>=60):
+    print("has aprovado, todavia no sales de campus")
+else:
+    print("has sido flitrado por el killer")

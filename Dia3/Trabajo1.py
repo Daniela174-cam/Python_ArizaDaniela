@@ -6,5 +6,5 @@ edad=int(input("ingrese su edad: "))
 
 if (edad>=18):
     print("Eres mayor de edad ")
-    else:
-        print("Eres ilegal todavia")
+else:
+    print("Eres ilegal todavia")
