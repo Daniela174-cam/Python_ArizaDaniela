@@ -5,6 +5,7 @@ fecha=(input("ingrese fecha del juego: "))
 
 def plantel(diccionario):
     for i,e in diccionario.items():
+        print('-----------------')
         print(f'{i}:{e}')
 
 
