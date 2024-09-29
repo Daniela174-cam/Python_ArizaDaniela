@@ -1,5 +1,4 @@
 
-
 def listaJugadores(lista):
     while True:
         try:       
@@ -10,7 +9,7 @@ def listaJugadores(lista):
             faltasJugador=int(input("cuantas faltas cometio el jugardor: "))
             tarjetaA=int(input("cantidad de tarjetas amarillas: "))
             tarjetaR=int(input("cantidad de tarjetas rojas: "))
-            diccionario ={
+            jugador={
                 "nombre":nombre,
                 "dorsal":dorsal,
                 "posicion":posicion,
@@ -19,12 +18,8 @@ def listaJugadores(lista):
                 "tarjetaA":tarjetaA,
                 "tarjetaR":tarjetaR
                           }
-            lista.append(diccionario)
-
-            for i,e in diccionario.items():
-                print('-----------------')
-                print(f'{i}:{e}')
-            
+            lista.append(jugador)
+            print (jugador)
             print(f"Jugador {nombre} agregado correctamente.\n")
             return
         except ValueError:
@@ -59,11 +54,14 @@ def eliminarJugador(lista):
     
     jugador_encontrado = False
     for jugador in lista:
+
         if jugador['nombre'].lower() == nombre.lower():
             lista.remove(jugador)
+
             print(f"El jugador {nombre} ha sido eliminado.")
             jugador_encontrado = True
             break
+
     if not jugador_encontrado:
         print(f"No se encontró al jugador con nombre {nombre}.")
 
@@ -71,8 +69,15 @@ def mostrarJugadores(lista):
     if not lista:
         print("No hay jugadores en la lista.")
     else:
-        print("\n--- Lista de Jugadores ---")
+        print("--- Lista de Jugadores ---")
         for jugador in lista:
-            print(f"Nombre: {jugador['nombre']}, Dorsal: {jugador['dorsal']}, Posición: {jugador['posicion']}, Goles: {jugador['golesJugador']}, Faltas: {jugador['faltasJugador']}, Tarjetas Amarillas: {jugador['tarjetaA']}, Tarjetas Rojas: {jugador['tarjetaR']}")
-        print("--------------------------\n")
+            print(f"Nombre: {jugador('nombre')}, "
+                  f"Dorsal: {jugador('dorsal')}, "
+                  f"Posición: {jugador('posicion')}, "
+                  f"Goles: {jugador('golesJugador')}, "
+                  f"Faltas: {jugador('faltasJugador')}, "
+                  f"Tarjetas Amarillas: {jugador('tarjetaA')}, "
+                  f"Tarjetas Rojas: {jugador('tarjetaR')}")        
+        print("--------------------------")
 
+listaJugadores()
