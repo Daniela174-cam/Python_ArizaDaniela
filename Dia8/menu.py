@@ -1,9 +1,12 @@
 import os
 from registro import equipo
 from plantel import plantel 
-from jugadores import eliminarJugador,anadir, listaJugadores as listaJ
+#from jugadores import agregarJugadores ,eliminarJugador,mostrarJugadores 
+import jugadores as jugadoresOptions
 
-listaJugadores=[
+
+
+lista_Jugadores=[
     {"id":1,"nombre": "juan"},
     {"id":2,"nombre": "ayu"}
 ]
@@ -30,7 +33,7 @@ def menuPrincipal():
         try:
             opcion=input ("seleccione una opcion: ")
             if (opcion=='1'):
-               anadir(listaJ)
+               menuJugadores(lista_Jugadores)
             elif (opcion =='2'):
                 plantel(listaPlantel)
             elif (opcion == '3'):
@@ -45,39 +48,29 @@ def menuPrincipal():
         print('-----------------')
 
 
-def menuInsert(listaJ):
-       
-       while True:
+def menuJugadores(lista):
+    while True:
         print("""
-    LISTA JUGADORES
-                                                                                      
-    Opciones disponibles:
-    1. añadir jugador.
-    2. eliminar jugador.
-    3. mostrar lista de jugadores.
-    4. salir del programa.
-            """)
-        try:
-            opcion=input("seleccione una opcion: ")
-            if opcion== '1':
-                anadir()
-            elif opcion=='2':
-                eliminarJugador(listaJ)
-            elif opcion== '3':
-                listaJ(listaJ)
-            elif opcion=='4':
-                print("deseas volver al menu principal?")
-                return
-            else:
-                print("opcion no valida,intente de nuevo")
-        except ValueError:
-            print(" ingresa un número válido.")
-        except Exception as e:
-            print(f"ha ocurrido un error: {e}")
-            
-menuPrincipal()     
-        
-    
+        MENU JUGADORES.
+1. Agregar un jugador-
+2. Eliminar un jugador.
+3. Mostrar jugadores.
+4. volver al menu princiapl.
+""")
+        opcion=input ("""INGRESE UNA OPCION: """)
+        if (opcion=='1'):
+            lista_Jugadores.append(jugadoresOptions.agregarJugadores(lista_Jugadores))
+        elif (opcion =='2'):
+            eliminarJugador(lista)
+        elif (opcion=='3'):
+            mostrarJugadores(lista)
+        elif (opcion =='4'):
+            return
+        else:
+            print("opcion no valida, intente de nuevo")
 
+            
+
+menuPrincipal()
 
 
