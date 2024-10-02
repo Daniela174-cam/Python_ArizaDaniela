@@ -2,26 +2,13 @@ def agregarJugadores(lista):
     while True:
         try: 
             nombre= input("ingrese nombre del jugador: ")
-            #dorsal= int(input("ingrese dorsal del jugador(numero): "))
-            #posicion=input("ingrese la posicion del jugador: ")
-            #golesJugador=int(input("ingrese cuantos goles hizo el jugador: "))
-            #faltasJugador=int(input("cuantas faltas cometio el jugardor: "))
-            #tarjetaA=int(input("cantidad de tarjetas amarillas: "))
-            #tarjetaR=int(input("cantidad de tarjetas rojas: "))
             jugador={
                 "id": lista[-1]["id"] + 1, 
-                "nombre": nombre,
-     #           "dorsal":dorsal,
-      #          "posicion":posicion,
-   #             "golesJugador":golesJugador,
-      #          "faltasJugador":faltasJugador,
-      #          "tarjetaA":tarjetaA,
- #               "tarjetaR":tarjetaR
+                "nombre": nombre
                           }
             print (jugador)
             return jugador
-            #print(f"Jugador {nombre} agregado correctamente.\n")
-            return
+        
         except ValueError:
             print("porfavor intente de nuevo")
     
@@ -49,11 +36,5 @@ def mostrarJugadores(listaJ):
     else:
         print("--- Lista de Jugadores ---")
         for jugador in listaJ:
-            print(f"Nombre: {jugador['nombre']}, "
-                  f"Dorsal: {jugador['dorsal']}, "
-                  f"Posición: {jugador['posicion']}, "
-                  f"Goles: {jugador['golesJugador']}, "
-                  f"Faltas: {jugador['faltasJugador']}, "
-                  f"Tarjetas Amarillas: {jugador['tarjetaA']}, "
-                  f"Tarjetas Rojas: {jugador['tarjetaR']}")        
+            print(f"Nombre: {jugador['nombre']}")        
         print("--------------------------")

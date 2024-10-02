@@ -1,8 +1,8 @@
 import os
 from registro import equipo
 from plantel import plantel 
-#from jugadores import agregarJugadores ,eliminarJugador,mostrarJugadores 
 import jugadores as jugadoresOptions
+import registro 
 
 
 
@@ -61,16 +61,17 @@ def menuJugadores(lista):
         if (opcion=='1'):
             lista_Jugadores.append(jugadoresOptions.agregarJugadores(lista_Jugadores))
         elif (opcion =='2'):
-            eliminarJugador(lista)
+            jugadoresOptions.eliminarJugador(lista)
         elif (opcion=='3'):
-            mostrarJugadores(lista)
+            jugadoresOptions.mostrarJugadores(lista)
         elif (opcion =='4'):
-            return
+            print(menuPrincipal())
+            return 
         else:
             print("opcion no valida, intente de nuevo")
 
             
-
-menuPrincipal()
+if (__name__=="__main__"):
+    menuPrincipal()
 
 
